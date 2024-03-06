@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background:Tan;
+            
+        }
+        #container {
+                    height: 525px;
+                    width: 360px;
+                    margin: 100px auto;
+                    background: #f7f7f7;
+                    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+                    background-color:rgb(108, 223, 223);
+                    border: 3px solid whitesmoke;
+                 
+        }
+        h1{
+            background-color: DarkOrange;
+        }
+        #calculate:hover{
+            background-color:yellow;
+        }
+        p{
+            font-weight:530;
+        }
+       
+            
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tipcalculator</title>
+</head>
+<body>
+    <center>
+    <div id="container">
+        <h1>Tip Calculator</h1>
+        <div id="calculator">
+      
+      
+          <form>
+            <p>How much was your bill?</p>
+              <p>
+                ₹<input id="billamt" type="text" placeholder="Bill Amount">
+              </p>
+      
+                <p>How was your service?</p>
+                  <p>
+                  <select id="serviceQual">
+                  <option disabled selected value="0">-- Choose an Option --</option>
+                  <option value="0.15">15% - Outstanding</option>
+                  <option value="0.12">12% - Good</option>
+                  <option value="0.1">10% - It was OK</option>
+                  <option value="0.0">0% - Bad</option>
+                  
+              </select>
+      
+          </form>
+          
+          <button type="button" id="calculate">Calculate!</button>
+      
+        </div>
+       
+        <div id="totalTip">
+          <sup>₹</sup><span id="tip">0.00</span>
+          
+        </div>
+    </center> 
+    <script>
+        document.getElementById('calculate').addEventListener('click', function() {
+            
+            var billAmt = document.getElementById('billamt').value;
+            
+            var serviceQual = document.getElementById('serviceQual').value;
+    
+            
+            if (billAmt === "" || isNaN(billAmt)) {
+                alert("Please enter valid values.");
+                return;
+            }
+    
+            // Calculate tip
+            var total = (billAmt * serviceQual)
+            total = total.toFixed(2);
+
+            // Display tip
+            document.getElementById('totalTip').style.display = 'block';
+            document.getElementById('tip').innerHTML = total;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>TipCalculator</title>
+    
+    <style>
+        .div1 {
+            width: 450px;
+            height: 600px;
+            margin: auto;
+            background-color: #D4E2D4;
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body bgcolor="FAF3F0">
+    <div class="div1">
+        <center>
+            <h2>**Tip Calculator**</h2>
+        </center>
+        <form name="tipform" onsubmit="return tipcalc()">
+            <center>
+                <table>
+                    <tr>
+                        <td>
+                            <label>Total Bill: </label>
+                        </td>
+                        <td>
+                            <input type="number" min="0" step=".01" id="amount" required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Tip Amount(₹): </label>
+                        </td>
+                        <td>
+                            <select id="tip" required>
+                                <option disabled selected value="">-- Choose an Option --</option>
+                                <option value="0.15">15% - Outstanding</option>
+                                <option value="0.12">12% - Good</option>
+                                <option value="0.10">10% - It was OK</option>
+                                <option value="0.0">0% - Bad</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <center>
+                                <br />
+                                <input type="reset" />
+                                <input type="submit" />
+                            </center>
+                        </td>
+                    </tr>
+                </table>
+            </center>
+        </form>
+        <center>
+            <p id="totalTip">
+                <br />
+                <br />
+                Total Amount ₹ <span id="myp">0.00</span>
+            </p>
+        </center>
+    </div>
+
+    <script>
+        function tipcalc() {
+            var amount = document.getElementById("amount").value;
+            var tipPercentage = document.getElementById("tip").value;
+            
+            if (amount === "" || tipPercentage === "") {
+                alert("Please fill in all fields.");
+                return false;
+            }
+            
+            amount = parseFloat(amount);
+            tipPercentage = parseFloat(tipPercentage);
+            
+            var totalTip = amount * tipPercentage;
+            document.getElementById("myp").textContent = totalTip.toFixed(2);
+            
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+</html>

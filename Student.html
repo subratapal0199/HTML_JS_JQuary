@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        h3{
+            text-align:center;
+			font-size:30px;
+        }
+        label{
+            color:black;
+            font-size:12px;
+            margin-right: 20px;
+        }
+		.mr-0{
+			margin-right:0px;
+			margin-left:0px;
+            width: auto;
+		}
+		.Address {
+			padding :20px;
+            width:400px;
+		}
+	
+	
+            
+		input{
+			border:2px solid green;
+			border-radius:5px;
+            padding: 8px 12px;
+            width:400px;
+
+		}
+        input[type="radio"]{
+            width: auto;
+        }
+
+		label{
+			font-size: 16px;
+            font-weight: bold;
+            width: 135px;
+            display: inline-block;
+			
+		}
+		form {
+			background-color: #EEE8AA;
+		     padding:20px;
+            border:5px solid black;
+            margin-top:20px;
+            margin-bottom:20px;
+		}
+		
+		div{
+			width:50%;
+			align-items:center;
+		}
+
+       .Submit{
+        padding-left:10px;
+        padding-right:10px;
+        color:black;
+        background-color:orange;
+        font-weight:bolder;
+         width:auto;
+
+       }
+       .group{
+            display: flex;
+            margin-bottom: 16px;
+       }
+
+    </style>
+</head>
+<body>
+
+	  <div style="margin:0 auto">
+		
+			<form action="C:\Users\Administrator\source\repos\HTMLPage1.html" name ="myform" onsubmit="return validateform()">
+				<h3 style="color:rgb(25, 80, 231);">OrderFoodOnline</h3>
+                <div class="group">
+                    <label for="Name">Name:</label>
+                    <div class="right_part1">
+                    <input type="text" id="Name" name="Name" placeholder=" Enter your name">
+                    <span id="nam"></span>
+                    </div>
+                </div>
+                
+                <br> <br />
+
+				<label for="Date">Date:</label>
+				<input type="date" id="Date" name="Date"><br /></br>
+                <div class="group">
+                    <label for="email">email ID:</label>
+                    <div class="right_part">
+                        <input type="email" id="email" name="email" placeholder="Enter your email ID">
+                        <span id="em"></span>
+                    </div>
+                </div>
+                <br></br>
+
+				<label for="Contact Number">Contact Number:</label>
+				<input type="Contact Number" id="ContactNumber" name="ContactNumber" placeholder="Enter your phone number">
+                
+                <br></br>
+
+				<label for="Select Food">Select Food:</label>
+				<label for="Non-vegeterian" class ="mr-0">Non-vegeterian</label>
+				<input type="radio" id="Non-vegeterian" name="Select Food">
+				<label for="Vegeterian" class="mr-0">Vegeterian</label>
+				<input type="radio" id="Vegeterian" class="new" name="Select Food"><br></br>
+
+
+
+				<label for="Select Resturant">Select Resturant:</label>
+				<input list="Select Resturant" name="Select Resturant">
+
+				<datalist id="Select Resturant">
+
+					<option value="KFC">
+
+					<option value="TestRider">
+
+					<option value="DadaBoudi">
+
+				</datalist>
+				</br></br>
+				<label for="Drink">Drink:</label>
+				<input list="Drink" name="Drink">
+
+				<datalist id="Drink">
+
+					<option value="Mango Shake">
+
+					<option value="Banana Shake">
+
+					<option value="Lassi">
+
+				</datalist>
+
+				</br></br>
+				<label for="Soups">Soups:</label>
+				<input list="Soups" name="Soups">
+
+				<datalist id="Soups">
+
+					<option value="Chicken Soup">
+
+					<option value="Vegetable Soup">
+
+					<option value="Mashroom Soup">
+
+				</datalist>
+
+				</br></br>
+				<label for="Dishes">Dishes:</label>
+				<input list="Dishes" name="Dishes">
+
+				<datalist id="Dishes">
+
+					<option value="Chicken Kasha">
+
+					<option value="Chicken Resala">
+
+					<option value="Chicken Mashala">
+
+				</datalist>
+				<br /><br />
+				<label for="Order For">Oder For:</label>
+				<label for="Take Away" class="mr-0">Take Away</label>
+				<input type="radio" id="Take Away" name="Order For">
+				<label for="Home Delivery" class="mr-0">Home Delivery </label>
+				<input type="radio" id="Home Delivery" class="new1" name="Order For"><br></br>
+
+				<label for="Address">Address:</label>
+				<textarea id="Address" name="Address" class="Address"></textarea><br> <br />
+
+				<label for="State">State:</label>
+
+				<input list="State" name="State">
+
+				<datalist id="State">
+					
+                        <option value="Callifornia" ></option>
+                        <option value="West Bengal" ></option>
+                        <option value="Maharastra" ></option>
+                        <option value="UP" ></option>
+                        <option value="Bihar" ></option>
+                  </datalist>
+                  <br>
+                  <br>
+             <center>
+                     <input type = "Submit" name ="Submit" value = "Submit" class ="Submit">
+            </center>
+			</form>
+		
+		  </div>
+
+
+          <script>
+            function validateform(){
+            var name=document.myform.name.value;
+            var email=document.myform.email.value;
+            var ContactNumber=document.myform.ContactNumber.value;
+
+            if(name==null|| name==""){
+                //alert("Name con not be Null!");
+                document.getElementById("nam").innerHTML="Please enter your name"
+                document.getElementById("nam").style.color="red";
+            return false;
+             }
+
+            if (email==null || email==""){
+                document.getElementById("em").innerHTML="Please enter your email"
+                document.getElementById("em").style.color="red";
+              
+             return false;
+             }
+             
+             else if(ContactNumber.length!=10 ){
+                    alert("Contact Number must be 10 characters long.");
+             return false;
+             }
+             }
+             </script>
+             </form>
+</body>
+</html>

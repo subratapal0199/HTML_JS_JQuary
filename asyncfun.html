@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+ <html> <head> <meta charset="utf-8"> <title>JavaScript Async</title> </head>
+ <body>
+ <h2>JavaScript Async</h2>
+ <p id="main"></p>
+ <script>
+ function myDisplayer(some) {
+ document.getElementById("main").innerHTML = some;
+ }
+ async function myfirstFunction() {
+ return "Hello World!!!";
+ }
+ myfirstFunction().then(
+ function(value) {myDisplayer(value);},
+ function(error) {myDisplayer(error);}
+ );
+ </script>
+ </body>
+ </html> 
