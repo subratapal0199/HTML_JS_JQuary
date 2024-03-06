@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+            font-family: arial;
+            padding: 6%;
+            color: white;
+        }
+
+        address {
+            padding: 20px
+        }
+
+        h1 {
+            text-align: center;
+            color: red;
+        }
+
+        label {
+            color: black;
+        }
+
+        .address {
+            padding: 30px;
+        }
+
+        input {
+            border: 2px solid green;
+            border-radius: 5px;
+        }
+
+        form {
+            background-color: rgb(240,230,140);
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        div {
+            width: 50%
+        }
+    </style>
+    
+    <meta charset="utf-8" />
+    <title>OrderFoodOnline</title>
+    <script>
+        function validateFrom() {
+            debugger
+            var myobj = document.getElementById(name);
+            var nm = myobj.value;
+            if (nm == null || nm == "")
+                alert("Name can not be null");
+            return false;
+        }
+    </script>
+</head>
+<body>
+
+    
+    <center >
+        <div>
+            <form id="myfrom">
+                <h1>OrderFoodOnline</h1>
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter your Name"><br><br>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date"><br><br>
+
+                <label for="email">Email ID:</label>
+                <input type="text" id="email" name="email" placeholder="Enter your eamil ID"><br><br>
+
+                <label for="phone">Contact Number:</label>
+                <input type="tel" id="phone" name="email" placeholder="Enter your phone number"><br><br>
+
+                <label for="foob">Select Food:</label>
+                <label for="Nveg">Non-Vegetarian </label>
+                <input type="radio" id="Nveg" name="Nveg">
+
+                <label for="veg">Vegetarian </label>
+                <input type="radio" id="veg" name="Nveg"><br /><br />
+
+
+                <label for="restaurant">Select Restaurant:</label>
+                <input list="restaurant" name="restaurant" placeholder="Select Your Restaurant">
+                <datalist id="restaurant">
+
+                    <option value="Take It Cheesy">
+
+                    <option value="DUTCH BANGLA">
+
+                    <option value="First Class Cocktails">
+
+                    <option value="Royal Bengal Restaurant">
+
+                    <option value="Munmun’s Kitchen">
+
+                </datalist>
+
+                <br /><br />
+
+                <label for="drinks">Drinks:</label>
+                <input list="drinks" name="drinks" placeholder="Select your Drinks">
+                <datalist id="drinks">
+
+                    <option value="Vodka">
+
+                    <option value="gin">
+
+                    <option value="whiskey">
+
+                    <option value="Rum">
+
+                    <option value="brandy">
+
+                </datalist>
+
+                <br /><br />
+
+                <label for="soups">Soups:</label>
+                <input list="soups" name="soups" placeholder="Select the Soups">
+                <datalist id="soups">
+
+                    <option value="Hot and Sour Soup">
+
+                    <option value="Sweet Corn Soup">
+
+                    <option value="Mushroom Soup">
+
+                    <option value="Wonton Soup">
+
+                    <option value="Egg Drop Soup">
+
+                </datalist>
+
+                <br /><br />
+
+                <label for="dishes">Dishes:</label>
+                <input list="dishes" name="dishes" placeholder="Select the Dishes">
+                <datalist id="dishes">
+
+                    <option value="Kung Pao chicken">
+
+                    <option value="Peking Duck">
+
+                    <option value="Noodle soup">
+
+                    <option value="Sliced Noodles">
+
+                    <option value="​Chilli Paneer​">
+
+                </datalist>
+
+                <br /><br />
+
+                <label for="delivery">Order For:</label>
+                <label for="ta">Take Away </label>
+                <input type="radio" id="ta" name="ta">
+
+                <label for="HD">Home Delivery </label>
+                <input type="radio" id="HD" name="ta"><br /><br />
+
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" class="address"><br /><br />
+
+
+
+
+                <label for="state">State:</label>
+                <input list="state" name="state" placeholder="Select the state">
+                <datalist id="state">
+
+                    <option value="West Bengal">
+
+                    <option value="Delhli">
+
+                    <option value="Mumbai">
+
+                    <option value="Chennai">
+
+                    <option value="​Bihar​">
+
+                </datalist>
+                <br /><br />
+                <input type="submit"value="submit" onclick="validateFrom()">
+            </form>
+            </div>
+        </center>
+
+</body>
+</html>

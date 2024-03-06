@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            background-color: dodgerblue;
+            font-family: arial;
+            padding: 6%;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <form action=“url">
+        Search Google: <input type="search" name="q"><br>
+        Select a time: <input type="time" name="usr_time">
+
+        <h2>The datalist Element</h2>
+         <p>The datalist element specifies a list of pre-defined options for an input element.</p>
+        
+           <input list="browsers" name="browser">
+             <datalist id="browsers">
+                
+                <option value="Internet Explorer">
+                    
+                <option value="Firefox">
+                    
+                <option value="Chrome">
+                    
+                <option value="Opera">
+                    
+                <option value="Safari">
+                    
+            </datalist>
+       
+
+
+            <input type="submit">
+
+        </form>
+
+</body>
+
+</html>
