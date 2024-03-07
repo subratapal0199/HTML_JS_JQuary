@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: rgb(155, 228, 228);
+    padding: 40px;
+  }
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .gallery img {
+    margin: 10px;
+    width: 200px;
+    height: 150px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .gallery img:hover {
+    transform: scale(3.3);
+  }
+  
+  .zoom-in {
+    transform: scale(2);
+    z-index: 999;
+  }
+  
+  .zoom-out {
+    transform: scale(1);
+    z-index: auto;
+  }
+  

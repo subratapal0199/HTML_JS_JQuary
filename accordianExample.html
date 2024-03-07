@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Accordion - Collapse content</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion({
+      collapsible: true,
+      icons: {
+        header: "ui-icon-plus", 
+        activeHeader: "ui-icon-minus"
+      },
+      event: "mouseover" 
+    }).on('mouseleave', function () {
+                $(this).accordion("option","active", false);
+    });
+    
+    var stateList = ['Kolkata','New Town','Behala','Maheshtala','Digha','howrah','Rajarhat','Rashbihari'];
+    $( "#tags" ).autocomplete({
+      source: stateList
+    });
+  } );
+  </script>
+</head>
+<body>
+ 
+<div id="accordion">
+  <h3>Kolkata</h3>
+  <div>
+    <p>Kolkata, the capital of the Indian state of West Bengal, is a vibrant city with a rich history and cultural heritage. Situated on the eastern bank of the Hooghly River, it is known for its colonial architecture, bustling markets, and diverse cuisine. Formerly known as Calcutta, it was the capital of British India until 1911 and played a pivotal role in the country's independence movement. </p>
+  </div>
+  <h3>Vrindavan</h3>
+  <div>
+    <p>Vrindavan is a sacred town located in the Mathura district of Uttar Pradesh, India. It is renowned as the place where Lord Krishna is said to have spent his childhood years, engaging in playful activities with his devotees, especially the gopis (cowherd maidens). As a result, Vrindavan holds immense religious significance for Hindus and is considered one of the holiest pilgrimage sites in India. </p>
+  </div>
+  <h3>Kashi</h3>
+  <div>
+    <p>Kasi, also known as Varanasi or Banaras, is one of the oldest and holiest cities in India. Situated on the banks of the sacred Ganges River in the state of Uttar Pradesh, Kasi is a significant pilgrimage destination for Hindus. It is believed to be the abode of Lord Shiva, and according to Hindu mythology, it is one of the seven holiest cities, granting Moksha or liberation from the cycle of birth and death.</p>
+    <ul>
+      <li>Kasi is renowned for its ghats</li>
+      <li>Kashi Vishwanath Temple</li>
+      <li>Manikarnika Ghat</li>
+    </ul>
+  </div>
+  <h3>Mumbai</h3>
+  <div>
+    <p>Mumbai, formerly known as Bombay, is the financial, commercial, and entertainment capital of India. Situated on the west coast, it is the largest city in the country by population and one of the most populous urban regions in the world. Mumbai is a melting pot of cultures, where people from diverse backgrounds and ethnicities coexist harmoniously.  </p>
+  </div>
+  <div class="auto_com">
+    <label for="tags">City: </label>
+    <input id="tags">
+  </div>
+</div>
+ 
+ 
+</body>
+</html>
