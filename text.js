@@ -1,20 +1,38 @@
-function calculateTip() {
-    var billAmt = document.getElementById("billamt").value;
-    var serviceQual = document.getElementById("serviceQual").value;
+//Converting JSON Object to String and String to JSON Object
 
-    if (billAmt === "" || serviceQual == 0) {
-        alert("Please enter values");
-    return;
+const employee= {
+    "firstname": "Rick",
+    "lastname": "Brown",
+    "age": 22,
+    "salary": 15000
+    };
+var string = JSON.stringify(employee);
+console.log(string);  
+console.log(typeof string);
+ 
+const employeeList= [{
+    "firstname": "Rick",
+    "lastname": "Brown",
+    "age": 22,
+    "salary": 15000
+    },
+    {
+    "firstname": "Rick",
+    "lastname": "Brown",
+    "age": 22,
+    "salary": 15000
     }
-    var total = (billAmt * serviceQual)
-    total = Math.round(total * 100) / 100;
-    total = total.toFixed(2);
-    document.getElementById("totalTip").style.display = "block";
-    document.getElementById("tip").innerHTML = total;
+    ];    
 
-    document.getElementById("totalTip").style.display = "none";
+var string = JSON.stringify(employeeList);
+console.log(string);  
 
-    document.getElementById("calculate").onclick = function() {
-    calculateTip();
-    }
-}
+//Converting JSON Object to String and String to JSON Object
+var employee1= '{"firstname": "Rick", "lastname": "Brown", "age": 22, "salary": 15000}';
+var object = JSON.parse(employee1);
+console.log("Simple way to display:")
+console.log(object);
+
+
+    
+

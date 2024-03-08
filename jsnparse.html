@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Converting JSON String to JSON Object</title>
+</head>
+<body>
+<h3>Converting JSON String to JSON Object</h3>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+        const employee1= '{"firstname": "Rick", "lastname": "Brown", "age": 22, "salary": 15000}';
+        var object = JSON.parse(employee1);
+        document.write(object);
+        
+        $.each(object, function(prop,val){
+        document.write(`${prop} : ${val}`+"  ")
+    });
+</script>
+</body>
+</html>
