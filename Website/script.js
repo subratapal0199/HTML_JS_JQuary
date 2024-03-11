@@ -45,7 +45,7 @@ const animText = new Typed('.animated-text', {
 
 document.getElementById('downloadResumeBtn').addEventListener('click', function() {
     // Change the path to your resume file
-    var resumeUrl = 'D:/Documents/Resume_of_Subratapal.pdf';
+    var resumeUrl = 'Document/Resume_of_Subratapal.pdf';
     // Create an anchor element
     var link = document.createElement('a');
     link.href = resumeUrl;

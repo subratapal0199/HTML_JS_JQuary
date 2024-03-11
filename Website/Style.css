@@ -283,6 +283,19 @@ form input,textarea{
     resize: none;
 }
 
+.projects-items .project-card
+{
+    position:relative;
+    top:20px;
+}
+
+.projects-items .project-card #card-overlay i{
+    position:absolute;
+    top:120px;
+    z-index:2;
+    color:chartreuse;
+    font-size:30px;
+}
 /* Footer section */
 /* Responsive section */
 @media (max-width: 1200px){
